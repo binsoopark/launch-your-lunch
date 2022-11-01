@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/podSearchFragment">
+
+    <fragment
+        android:id="@+id/podSearchFragment"
+        android:name="com.hipaduck.launchyourlunch.ui.view.PodSearchFragment"
+        android:label="podSearchFragment" >
+        <action
+            android:id="@+id/action_podSearchFragment_to_podCreateFragment"
+            app:destination="@id/podCreateFragment" />
+        <action
+            android:id="@+id/action_podSearchFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/podCreateFragment"
+        android:name="com.hipaduck.launchyourlunch.ui.view.PodCreateFragment"
+        android:label="podCreateFragment" >
+        <action
+            android:id="@+id/action_podCreateFragment_to_podSearchFragment"
+            app:destination="@id/podSearchFragment" />
+        <action
+            android:id="@+id/action_podCreateFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.hipaduck.launchyourlunch.ui.view.SettingFragment"
+        android:label="SettingFragment" >
+        <action
+            android:id="@+id/action_settingFragment_to_podSearchFragment"
+            app:destination="@id/podSearchFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_podCreateFragment"
+            app:destination="@id/podCreateFragment" />
+    </fragment>
+</navigation>
