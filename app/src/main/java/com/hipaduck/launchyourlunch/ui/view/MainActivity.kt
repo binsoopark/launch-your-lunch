@@ -14,15 +14,14 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    private val _binding: ActivityMainBinding? by lazy { ActivityMainBinding.inflate(layoutInflater) }
-    val binding get() = _binding!!
+    private val binding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
 
         setupJetpackNavigation()
     }
@@ -34,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         binding.mainBottomNavigationView.setupWithNavController(navController)
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.podSearchFragment, R.id.podCreateFragment, R.id.settingFragment
+                R.id.fragment_pod_search, R.id.fragment_pod_create, R.id.fragment_settings
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

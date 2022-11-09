@@ -22,6 +22,9 @@ class PodSearchFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentPodSearchBinding.inflate(layoutInflater)
+//        binding
+//        viewModel.getWeather()
+
         return binding.root
     }
 

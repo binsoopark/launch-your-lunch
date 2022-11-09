@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/menu_pod_create"
-        android:title="팟 만들기"
+    <item android:id="@+id/fragment_pod_create"
+        android:title="@string/title_pod_create"
         android:icon="@drawable/ic_baseline_search_24" />
-    <item android:id="@+id/menu_pod_search"
-        android:title="팟 찾기"
+    <item android:id="@+id/fragment_pod_search"
+        android:title="@string/title_pod_search"
         android:icon="@drawable/ic_baseline_search_24" />
-    <item android:id="@+id/menu_settings"
-        android:title="설정"
+    <item android:id="@+id/fragment_settings"
+        android:title="@string/title_settings"
         android:icon="@drawable/ic_baseline_search_24" />
 </menu>
