@@ -7,7 +7,8 @@ import retrofit2.http.Query
 
 interface WheatherApi {
     @GET("getVilageFcst")
-    suspend fun requestWheather(
+    suspend fun requestWeather(
+        @Query("ServiceKey") serviceKey: String,
         @Query("nx") nx: String,
         @Query("ny") ny: String,
         @Query("base_date") baseDate: String,

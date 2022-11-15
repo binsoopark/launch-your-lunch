@@ -19,7 +19,7 @@ object NetworkModule {
     private const val CONNECT_TIMEOUT = 15L // 15 seconds
     private const val WRITE_TIMEOUT = 20L // 20 seconds
     private const val READ_TIMEOUT = 20L // 20 seconds
-    private const val BASE_URL = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0" //TODO: 지정 필요
+    private const val BASE_URL = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/" //TODO: 지정 필요
 
     @Provides
     @Singleton

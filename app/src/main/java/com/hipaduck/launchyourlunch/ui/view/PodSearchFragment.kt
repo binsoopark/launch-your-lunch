@@ -22,10 +22,15 @@ class PodSearchFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentPodSearchBinding.inflate(layoutInflater)
-//        binding
-//        viewModel.getWeather()
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.searchFragmentTitle.setOnClickListener {
+            binding.searchFragmentResult.text = viewModel.weatherData.value
+        }
     }
 
     override fun onDestroyView() {

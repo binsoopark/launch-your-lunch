@@ -10,15 +10,17 @@ class WeatherRepositoryImpl @Inject constructor(
     private val client: Retrofit,
     private val api: WheatherApi,
 ): WeatherRepository {
+    private val serviceKey: String = "H4x622Qm0l4CRmP3aW++k0EZw++gIW0xnawVEKxNDWCKRg8HjZjyyQQnrEn8cToDhZkHiHxYDkvAAcMOohqbbA=="
+
     override suspend fun getWeather(): String {
         Log.d("GAEGUL", "getWeather: entered")
         var result: String = ""
-        val response = api.requestWheather("60", "125", "20221109", "0500", "json")
+        val response = api.requestWeather(serviceKey,"60", "125", "20221114", "0500", "json")
 
         if (response.isSuccessful) {
             response.body()?.let { body ->
                 val arr = body.response.items.item.info
-                Log.d("GAEGUL", "getWeather: " + arr)
+                Log.d("GAEGUL", "getWeather: $arr")
                 result = arr.toString()
             }
         }
