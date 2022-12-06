@@ -1,21 +1,21 @@
 package com.hipaduck.launchyourlunch.di
 
-import com.hipaduck.launchyourlunch.data.remote.api.WheatherApi
+import com.hipaduck.launchyourlunch.domain.GetWeather
+import com.hipaduck.launchyourlunch.domain.WeatherRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import retrofit2.Retrofit
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object AppModule {
+object UsecaseModule {
     @Singleton
     @Provides
-    fun provideWeatherApi(
-        retrofit: Retrofit
-    ): WheatherApi {
-        return retrofit.create(WheatherApi::class.java)
+    fun providesGetWeather(
+        repository: WeatherRepository,
+    ): GetWeather {
+        return GetWeather(repository)
     }
 }
